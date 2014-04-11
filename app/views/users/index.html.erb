@@ -1,5 +1,13 @@
 <h1>Pet Supplies R Us</h1>
 
+<ul>
+  <% @users.each do |user| %>
+    <li><%= link_to "#{user.name}", user_path(user) %>, <%= user.role %></li>
+  <% end %>
+</ul>
+
+<%= link_to "Add User", new_user_path, :class => "btn btn-primary" %>
+
 <%= link_to "New Product", new_product_path, :class => "btn btn-primary"  %>
 
 

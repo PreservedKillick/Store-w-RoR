@@ -7,6 +7,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div id="user_header">
+  <%= link_to "Log in", new_session_path %>
+</div>
 <div class="container">
   <%= flash[:alert] %>
   <%= flash[:notice] %>
