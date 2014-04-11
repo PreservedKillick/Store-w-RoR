@@ -1,4 +1,16 @@
 Store::Application.routes.draw do
+  get "users/index"
+  get "users/new"
+  get "users/show"
+  get "users/edit"
+  get "products/index"
+  get "products/new"
+  get "products/show"
+  get "products/edit"
+  get "product/index"
+  get "product/new"
+  get "product/show"
+  get "product/edit"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
