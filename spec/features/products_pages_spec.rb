@@ -19,6 +19,15 @@ describe 'Product' do
       click_button "Create Product"
       page.should have_content "Product Added to Store"
     end
+    it 'does not let the user add a new product withou a name' do
+      product = FactoryGirl.build(:product)
+      visit new_product_path
+      fill_in 'Price', :with => product.price
+      fill_in 'Description', :with => product.description
+      attach_file('product_image', '/Users/epicodus/Downloads/nolan.jpg')
+      click_button "Create Product"
+      page.should have_content "Name can't be blank"
+    end
   end
 
 end

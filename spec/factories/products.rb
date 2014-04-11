@@ -5,6 +5,6 @@ FactoryGirl.define do
     name "MyString"
     price 1.5
     description "MyText"
-    #image  { fixture_file_upload( 'Users/epicodus/Downloads/heg.jpeg', 'image/jpeg') }
   end
+
 end
