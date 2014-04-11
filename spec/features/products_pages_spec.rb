@@ -30,6 +30,14 @@ describe 'Product' do
       visit product_path(product)
       page.should have_content "#{product.name}"
     end
+    it "lets a user enter new information for a product" do
+      product = FactoryGirl.create(:product)
+      visit product_path(product)
+      click_link "Edit Product"
+      fill_in 'Name', :with => 'Special Chew'
+      click_button "Update Product"
+      page.should have_content "Special Chew"
+    end
   end
 
 

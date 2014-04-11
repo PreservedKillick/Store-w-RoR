@@ -12,3 +12,11 @@
     <td><%= @product.description %></td>
   </tr>
 </table>
+
+
+<%= link_to "Edit Product", edit_product_path(@product), :class => "btn btn-primary" %>
+<%= link_to "Delete Product", product_path(@product),
+          :class => "btn btn-primary",
+          :data =>
+          { :confirm => "you sure?",
+            :method => "delete" } %>
