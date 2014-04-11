@@ -28,6 +28,17 @@ describe 'Product' do
       click_button "Create Product"
       page.should have_content "Name can't be blank"
     end
+    it 'does not let the user create a product with a duplicate name' do
+      FactoryGirl.create(:product)
+      product = FactoryGirl.build(:bad_product)
+      visit new_product_path
+      fill_in 'Name', :with => product.name
+      fill_in 'Price', :with => product.price
+      fill_in 'Description', :with => product.description
+      attach_file('product_image', '/Users/epicodus/Downloads/nolan.jpg')
+      click_button "Create Product"
+      page.should have_content "Name has already been taken"
+    end
   end
 
 end
