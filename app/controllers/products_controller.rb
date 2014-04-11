@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   def index
+    @products = Product.all
   end
 
   def new
@@ -31,6 +32,13 @@ class ProductsController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def destroy
+    @product = Product.find(params[:id])
+    @product.destroy
+    flash[:notice] = "Product deleted"
+    redirect_to products_path
   end
 
   private
