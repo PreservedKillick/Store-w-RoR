@@ -1,0 +1,23 @@
+
+<%= render("layouts/errors", :object => @product) %>
+
+<%= form_for(@product) do |f| %>
+
+  <div class='form-group'>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div class='form-group'>
+    <%= f.label :price %>
+    <%= f.text_field :price %>
+  </div>
+  <div class='form-group'>
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </div>
+  <div class='form-group'>
+    <%= f.label :select_image %>
+    <%= f.file_field :image %>
+  </div>
+  <%= f.submit(:class => 'btn btn-primary') %>
+<% end %>
