@@ -3,11 +3,28 @@ class ProductsController < ApplicationController
   end
 
   def new
+    @product = Product.new
+  end
+
+  def create
+    @product = Product.new(product_params)
+    if @product.save
+      flash[:notice] = "Product Added to Store"
+      redirect_to product_path(@product)
+    else
+      render "new"
+    end
   end
 
   def show
+
   end
 
   def edit
+  end
+
+  private
+  def product_params
+    params.require(:product).permit(:name, :price, :description, :image)
   end
 end
