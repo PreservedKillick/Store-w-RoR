@@ -4,7 +4,7 @@ describe 'Product' do
 
   context 'creating' do
     it 'lets the user view the New Product page' do
-      visit root_url
+      visit users_path
       page.should have_content 'New Product'
       click_on 'New Product'
       page.should have_content 'Add your product.'
