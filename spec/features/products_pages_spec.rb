@@ -24,4 +24,13 @@ describe 'Product' do
     end
   end
 
+  context 'editing' do
+    it 'lets a user see a product page' do
+      product = FactoryGirl.create(:product)
+      visit product_path(product)
+      page.should have_content "#{product.name}"
+    end
+  end
+
+
 end
