@@ -4,6 +4,7 @@ FactoryGirl.define do
   factory :user do
     name "MyString"
     role "MyString"
-    password_digest "MyString"
+    password "MyString"
+    password_confirmation { |user| user.password }
   end
 end

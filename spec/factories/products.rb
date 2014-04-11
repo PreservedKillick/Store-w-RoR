@@ -5,6 +5,11 @@ FactoryGirl.define do
     name "MyString"
     price 1.5
     description "MyText"
+
+    factory :bad_product do
+      price 3.5
+      description "lorem ipsum"
+    end
   end
 
 end
