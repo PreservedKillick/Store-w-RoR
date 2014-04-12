@@ -12,4 +12,13 @@ class ApplicationController < ActionController::Base
   def authorize
     redirect_to root_url, alert: "Not authorized" if current_user.nil?
   end
+
+  def authorize_owner
+    redirect_to root_url, alert: "Not authorized" if current_user.role != "owner"
+  end
+
+  def authorize_add_products
+    redirect_to root_url, alert: "Not authorized" if current_user.role == "customer"
+  end
+
 end

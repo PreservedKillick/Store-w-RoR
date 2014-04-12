@@ -1,4 +1,7 @@
 class ProductsController < ApplicationController
+
+  before_filter :authorize_add_products, :only => [:new, :create, :edit, :destroy, :update]
+
   def index
     @products = Product.all
   end
